@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Voo — ICAO FPL</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo-area">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                        </svg>
+                    </div>
+                    <div class="titles">
+                        <h1>PLANO DE VOO</h1>
+                        <p>FLIGHT PLAN SUBMISSION FORM · ICAO FPL</p>
+                    </div>
+                </div>
+                <div class="badges">
+                    <span class="badge">FPL</span>
+                    <span class="badge">ICAO</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="content">
+            <form id="fpl-form">
+                <!-- Seção 1: Identificação -->
+                <section class="form-section">
+                    <div class="section-header">
+                        <span class="section-num">1</span>
+                        <h2>IDENTIFICAÇÃO DA AERONAVE</h2>
+                    </div>
+                    <div class="section-body">
+                        <div class="grid grid-2">
+                            <div class="input-group">
+                                <label for="identaeronave">Identificação da Aeronave *</label>
+                                <input type="text" id="identaeronave" placeholder="ex: PT-ABC" required autocomplete="off" class="mono">
+                            </div>
+                            <div class="input-group">
+                                <label for="numaeronave">Número da Aeronave *</label>
+                                <input type="text" id="numaeronave" placeholder="ex: 737" required autocomplete="off" class="mono">
+                            </div>
+                        </div>
+                        <div class="grid grid-2 mt-4">
+                            <div class="input-group">
+                                <label for="tipoaeronave">Tipo de Aeronave *</label>
+                                <input type="text" id="tipoaeronave" placeholder="ex: B737" required autocomplete="off" class="mono">
+                            </div>
+                            <div class="input-group">
+                                <label>Regras *</label>
+                                <div class="checkbox-group" id="regras-group">
+                                    <label class="custom-cb"><input type="checkbox" name="regras" value="I"><span>I</span></label>
+                                    <label class="custom-cb"><input type="checkbox" name="regras" value="V"><span>V</span></label>
+                                    <label class="custom-cb"><input type="checkbox" name="regras" value="Y"><span>Y</span></label>
+                                    <label class="custom-cb"><input type="checkbox" name="regras" value="Z"><span>Z</span></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Seção 2: Classificação -->
+                <section class="form-section">
+                    <div class="section-header">
+                        <span class="section-num">2</span>
+                        <h2>CLASSIFICAÇÃO E EQUIPAMENTOS</h2>
+                    </div>
+                    <div class="section-body">
+                        <div class="grid grid-3">
+                            <div class="input-group">
+                                <label for="tipodevoo">Tipo de Voo *</label>
+                                <select id="tipodevoo" required>
+                                    <option value="">— selecione</option>
+                                    <option value="G">G</option>
+                                    <option value="S">S</option>
+                                    <option value="N">N</option>
+                                    <option value="M">M</option>
+                                    <option value="X">X</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="catet">Esteira de Turbulência *</label>
+                                <select id="catet" required>
+                                    <option value="">— selecione</option>
+                                    <option value="L">L</option>
+                                    <option value="M">M</option>
+                                    <option value="H">H</option>
+                                    <option value="J">J</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="equipamento">Equipamento *</label>
+                                <select id="equipamento" required>
+                                    <option value="">— selecione</option>
+                                    <option value="N">N</option><option value="S">S</option>
+                                    <option value="A">A</option><option value="B">B</option>
+                                    <option value="C">C</option><option value="D">D</option>
+                                    <option value="E1">E1</option><option value="E2">E2</option>
+                                    <option value="E3">E3</option><option value="F">F</option>
+                                    <option value="G">G</option><option value="H">H</option>
+                                    <option value="I">I</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-group mt-4">
+                            <label for="equipamentov">Equipamento de Vigilância *</label>
+                            <select id="equipamentov" required>
+                                <option value="">— selecione</option>
+                                <option value="N">N</option><option value="S">S</option>
+                                <option value="A">A</option><option value="B">B</option>
+                                <option value="C">C</option><option value="D">D</option>
+                                <option value="E1">E1</option><option value="E2">E2</option>
+                                <option value="E3">E3</option><option value="F">F</option>
+                                <option value="G">G</option><option value="H">H</option>
+                                <option value="I">I</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Seção 3: Rota -->
+                <section class="form-section">
+                    <div class="section-header">
+                        <span class="section-num">3</span>
+                        <h2>PARTIDA E ROTA</h2>
+                    </div>
+                    <div class="section-body">
+                        <div class="grid grid-2">
+                            <div class="input-group">
+                                <label for="aerodromopt">Aeródromo de Partida *</label>
+                                <input type="text" id="aerodromopt" placeholder="ICAO ex: SBSP" required autocomplete="off" class="mono">
+                            </div>
+                            <div class="input-group">
+                                <label for="horaeobt">Hora EOBT *</label>
+                                <input type="text" id="horaeobt" placeholder="HHMM ex: 1430" required autocomplete="off" class="mono">
+                            </div>
+                        </div>
+                        <div class="grid grid-2 mt-4">
+                            <div class="input-group">
+                                <label for="velocidade">Velocidade de Cruzeiro *</label>
+                                <input type="text" id="velocidade" placeholder="ex: N0450" required autocomplete="off" class="mono">
+                            </div>
+                            <div class="input-group">
+                                <label for="niveldevoo">Nível de Cruzeiro *</label>
+                                <input type="text" id="niveldevoo" placeholder="ex: F350" required autocomplete="off" class="mono">
+                            </div>
+                        </div>
+                        <div class="input-group mt-4">
+                            <label for="rota">Rota *</label>
+                            <input type="text" id="rota" placeholder="ex: EFICO UL306 GINKO" required autocomplete="off" class="mono">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Seção 4: Destino -->
+                <section class="form-section">
+                    <div class="section-header">
+                        <span class="section-num">4</span>
+                        <h2>DESTINO E ALTERNATIVA</h2>
+                    </div>
+                    <div class="section-body">
+                        <div class="grid grid-3">
+                            <div class="input-group">
+                                <label for="aerodromodestino">Aeródromo de Destino *</label>
+                                <input type="text" id="aerodromodestino" placeholder="ICAO ex: SBRJ" required autocomplete="off" class="mono">
+                            </div>
+                            <div class="input-group">
+                                <label for="duracaototalvoo">Duração Prevista *</label>
+                                <input type="text" id="duracaototalvoo" placeholder="HHMM ex: 0145" required autocomplete="off" class="mono">
+                            </div>
+                            <div class="input-group">
+                                <label for="aerodromoalternativa">Aeródromo Alternativa *</label>
+                                <input type="text" id="aerodromoalternativa" placeholder="ICAO ex: SBGL" required autocomplete="off" class="mono">
+                            </div>
+                        </div>
+                        <div class="input-group mt-4">
+                            <label for="observacoes">Observações</label>
+                            <textarea id="observacoes" rows="3" placeholder="Informações suplementares..."></textarea>
+                        </div>
+                    </div>
+                </section>
+
+                <footer class="form-footer">
+                    <p class="obligatory">* Campos obrigatórios</p>
+                    <div class="actions">
+                        <button type="button" id="btn-cancel" class="btn btn-secondary">Cancelar</button>
+                        <button type="submit" id="btn-submit" class="btn btn-primary">Enviar Plano de Voo</button>
+                    </div>
+                </footer>
+            </form>
+        </main>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
