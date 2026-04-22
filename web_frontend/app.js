@@ -39,13 +39,31 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        // Coleta de dados
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
+        // Coleta de dados manual para garantir 100% de captura
+        const data = {
+            identaeronave: document.getElementById('identaeronave').value.trim(),
+            numaeronave: document.getElementById('numaeronave').value.trim(),
+            tipoaeronave: document.getElementById('tipoaeronave').value.trim(),
+            tipodevoo: document.getElementById('tipodevoo').value,
+            catet: document.getElementById('catet').value,
+            equipamento: document.getElementById('equipamento').value,
+            equipamentov: document.getElementById('equipamentov').value,
+            aerodromopt: document.getElementById('aerodromopt').value.trim(),
+            horaeobt: document.getElementById('horaeobt').value.trim(),
+            velocidade: document.getElementById('velocidade').value.trim(),
+            niveldevoo: document.getElementById('niveldevoo').value.trim(),
+            rota: document.getElementById('rota').value.trim(),
+            aerodromodestino: document.getElementById('aerodromodestino').value.trim(),
+            duracaototalvoo: document.getElementById('duracaototalvoo').value.trim(),
+            aerodromoalternativa: document.getElementById('aerodromoalternativa').value.trim(),
+            observacoes: document.getElementById('observacoes').value.trim()
+        };
         
         // Regras (Checkbox multiple)
-        const regras = Array.from(formData.getAll('regras'));
-        data.regras = regras.join(', ');
+        const regrasCbs = document.querySelectorAll('input[name="regras"]:checked');
+        data.regras = Array.from(regrasCbs).map(cb => cb.value).join(', ');
+
+        console.log('Dados coletados para envio:', data);
 
         // Validações Manuais (baseadas no código Java)
         if (!data.regras) {
