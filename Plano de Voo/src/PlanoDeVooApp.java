@@ -594,10 +594,9 @@ public class PlanoDeVooApp {
         String regrasStr = regras.toString().replaceAll(", $", "");
 
         // --- CONFIGURAÇÃO NEON (POSTGRESQL) ---
-        // Exemplo: jdbc:postgresql://ep-xxx-xxx.us-east-2.aws.neon.tech/neondb
-        String dbUrl = "jdbc:postgresql://SEU_HOST_NEON/neondb?sslmode=require";
-        String user = "SEU_USUARIO";
-        String pass = "SUA_SENHA";
+        String dbUrl = "jdbc:postgresql://ep-purple-resonance-ac9ld1p7-pooler.sa-east-1.aws.neon.tech/neondb?sslmode=require";
+        String user = "neondb_owner";
+        String pass = "npg_i9PkZ2R0czgl";
 
         try (Connection conn = DriverManager.getConnection(dbUrl, user, pass)) {
             PreparedStatement ps = conn.prepareStatement(
