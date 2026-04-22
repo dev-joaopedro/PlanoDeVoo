@@ -184,7 +184,61 @@ body {
 .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
 
 @media (max-width: 640px) {
-    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    body {
+        padding: 0;
+    }
+
+    .app-container {
+        border-radius: 0;
+        border: none;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .badges {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .checkbox-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .form-footer {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: stretch;
+        padding: 1.5rem;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 0.8rem;
+    }
+
+    #toast-container {
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+    }
+
+    .toast {
+        min-width: auto;
+    }
 }
 
 .mt-4 { margin-top: 1rem; }
