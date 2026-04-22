@@ -43,17 +43,17 @@
                         <div class="grid grid-2">
                             <div class="input-group">
                                 <label for="identaeronave">Identificação da Aeronave *</label>
-                                <input type="text" id="identaeronave" placeholder="ex: PT-ABC" required autocomplete="off" class="mono">
+                                <input type="text" id="identaeronave" name="identaeronave" placeholder="ex: PT-ABC" required autocomplete="off" class="mono">
                             </div>
                             <div class="input-group">
                                 <label for="numaeronave">Número da Aeronave *</label>
-                                <input type="text" id="numaeronave" placeholder="ex: 737" required autocomplete="off" class="mono">
+                                <input type="text" id="numaeronave" name="numaeronave" placeholder="ex: 737" required autocomplete="off" class="mono">
                             </div>
                         </div>
                         <div class="grid grid-2 mt-4">
                             <div class="input-group">
                                 <label for="tipoaeronave">Tipo de Aeronave *</label>
-                                <input type="text" id="tipoaeronave" placeholder="ex: B737" required autocomplete="off" class="mono">
+                                <input type="text" id="tipoaeronave" name="tipoaeronave" placeholder="ex: B737" required autocomplete="off" class="mono">
                             </div>
                             <div class="input-group">
                                 <label>Regras *</label>
@@ -78,7 +78,7 @@
                         <div class="grid grid-3">
                             <div class="input-group">
                                 <label for="tipodevoo">Tipo de Voo *</label>
-                                <select id="tipodevoo" required>
+                                <select id="tipodevoo" name="tipodevoo" required>
                                     <option value="">— selecione</option>
                                     <option value="G">G</option>
                                     <option value="S">S</option>
@@ -89,7 +89,7 @@
                             </div>
                             <div class="input-group">
                                 <label for="catet">Esteira de Turbulência *</label>
-                                <select id="catet" required>
+                                <select id="catet" name="catet" required>
                                     <option value="">— selecione</option>
                                     <option value="L">L</option>
                                     <option value="M">M</option>
@@ -99,7 +99,7 @@
                             </div>
                             <div class="input-group">
                                 <label for="equipamento">Equipamento *</label>
-                                <select id="equipamento" required>
+                                <select id="equipamento" name="equipamento" required>
                                     <option value="">— selecione</option>
                                     <option value="N">N</option><option value="S">S</option>
                                     <option value="A">A</option><option value="B">B</option>
@@ -113,7 +113,7 @@
                         </div>
                         <div class="input-group mt-4">
                             <label for="equipamentov">Equipamento de Vigilância *</label>
-                            <select id="equipamentov" required>
+                            <select id="equipamentov" name="equipamentov" required>
                                 <option value="">— selecione</option>
                                 <option value="N">N</option><option value="S">S</option>
                                 <option value="A">A</option><option value="B">B</option>
@@ -137,26 +137,26 @@
                         <div class="grid grid-2">
                             <div class="input-group">
                                 <label for="aerodromopt">Aeródromo de Partida *</label>
-                                <input type="text" id="aerodromopt" placeholder="ICAO ex: SBSP" required autocomplete="off" class="mono">
+                                <input type="text" id="aerodromopt" name="aerodromopt" placeholder="ICAO ex: SBSP" required autocomplete="off" class="mono">
                             </div>
                             <div class="input-group">
                                 <label for="horaeobt">Hora EOBT *</label>
-                                <input type="text" id="horaeobt" placeholder="HHMM ex: 1430" required autocomplete="off" class="mono">
+                                <input type="text" id="horaeobt" name="horaeobt" placeholder="HHMM ex: 1430" required autocomplete="off" class="mono">
                             </div>
                         </div>
                         <div class="grid grid-2 mt-4">
                             <div class="input-group">
                                 <label for="velocidade">Velocidade de Cruzeiro *</label>
-                                <input type="text" id="velocidade" placeholder="ex: N0450" required autocomplete="off" class="mono">
+                                <input type="text" id="velocidade" name="velocidade" placeholder="ex: N0450" required autocomplete="off" class="mono">
                             </div>
                             <div class="input-group">
                                 <label for="niveldevoo">Nível de Cruzeiro *</label>
-                                <input type="text" id="niveldevoo" placeholder="ex: F350" required autocomplete="off" class="mono">
+                                <input type="text" id="niveldevoo" name="niveldevoo" placeholder="ex: F350" required autocomplete="off" class="mono">
                             </div>
                         </div>
                         <div class="input-group mt-4">
                             <label for="rota">Rota *</label>
-                            <input type="text" id="rota" placeholder="ex: EFICO UL306 GINKO" required autocomplete="off" class="mono">
+                            <input type="text" id="rota" name="rota" placeholder="ex: EFICO UL306 GINKO" required autocomplete="off" class="mono">
                         </div>
                     </div>
                 </section>
@@ -171,20 +171,20 @@
                         <div class="grid grid-3">
                             <div class="input-group">
                                 <label for="aerodromodestino">Aeródromo de Destino *</label>
-                                <input type="text" id="aerodromodestino" placeholder="ICAO ex: SBRJ" required autocomplete="off" class="mono">
+                                <input type="text" id="aerodromodestino" name="aerodromodestino" placeholder="ICAO ex: SBRJ" required autocomplete="off" class="mono">
                             </div>
                             <div class="input-group">
                                 <label for="duracaototalvoo">Duração Prevista *</label>
-                                <input type="text" id="duracaototalvoo" placeholder="HHMM ex: 0145" required autocomplete="off" class="mono">
+                                <input type="text" id="duracaototalvoo" name="duracaototalvoo" placeholder="HHMM ex: 0145" required autocomplete="off" class="mono">
                             </div>
                             <div class="input-group">
                                 <label for="aerodromoalternativa">Aeródromo Alternativa *</label>
-                                <input type="text" id="aerodromoalternativa" placeholder="ICAO ex: SBGL" required autocomplete="off" class="mono">
+                                <input type="text" id="aerodromoalternativa" name="aerodromoalternativa" placeholder="ICAO ex: SBGL" required autocomplete="off" class="mono">
                             </div>
                         </div>
                         <div class="input-group mt-4">
                             <label for="observacoes">Observações</label>
-                            <textarea id="observacoes" rows="3" placeholder="Informações suplementares..."></textarea>
+                            <textarea id="observacoes" name="observacoes" rows="3" placeholder="Informações suplementares..."></textarea>
                         </div>
                     </div>
                 </section>
