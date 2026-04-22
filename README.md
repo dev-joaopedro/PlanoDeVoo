@@ -1,88 +1,59 @@
-# ✈️ Plano de Voo
+# ✈️ Sistema de Plano de Voo (Híbrido)
 
-Sistema de submissão de planos de voo desenvolvido em **Java Swing** com integração a banco de dados **MySQL**. O projeto oferece uma interface gráfica intuitiva para que pilotos ou despachantes possam cadastrar e validar informações de voo conforme os padrões aeronáuticos.
+Este é um ecossistema moderno para submissão de Planos de Voo (ICAO FPL), integrando uma aplicação desktop legado (Java) com uma interface web moderna e responsiva.
 
-## 🚀 Funcionalidades
-
-- **Interface Gráfica (GUI)**: Formulário completo para inserção de dados do plano de voo.
-- **Validação de Dados**: Verificação em tempo real de formatos (Horários, Identificações, Números).
-- **Persistência de Dados**: Armazenamento seguro de cada plano de voo em banco de dados MySQL.
-- **Campos Detalhados**:
-  - Identificação e Tipo de Aeronave.
-  - Regras de Voo (I, V, Y, Z).
-  - Categoria de Esteira de Turbulência.
-  - Equipamentos e Vigilância.
-  - Aeródromos de Partida, Destino e Alternativa.
-  - Rota, Velocidade e Nível de Cruzeiro.
-
-## 🛠️ Tecnologias Utilizadas
-
-- **Linguagem**: Java (JDK 17+)
-- **Interface**: Swing (AWT)
-- **Banco de Dados**: MySQL 8.0
-- **Conectividade**: JDBC (Java Database Connectivity)
-
-## 📋 Pré-requisitos
-
-Antes de começar, você precisará ter instalado em sua máquina:
-- [Java JDK](https://www.oracle.com/java/technologies/downloads/) (Versão 17 ou superior recomendada).
-- [MySQL Server](https://dev.mysql.com/downloads/installer/).
-- Driver JDBC do MySQL (`mysql-connector-java`).
-
-## 🔧 Configuração e Instalação
-
-### 1. Banco de Dados
-Crie o banco de dados e a tabela necessária executando o seguinte script SQL no seu terminal MySQL ou Workbench:
-
-```sql
-CREATE DATABASE IF NOT EXISTS exemplobd;
-USE exemplobd;
-
-CREATE TABLE IF NOT EXISTS plano_voo (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    Identificação_da_Aeronave VARCHAR(50),
-    Regras VARCHAR(50),
-    Tipo_de_Voo VARCHAR(10),
-    Número_de_Aeronave VARCHAR(10),
-    Tipo_de_Aeronave VARCHAR(50),
-    Catet VARCHAR(10),
-    Equipamento VARCHAR(50),
-    Equipamento_Vigilancia VARCHAR(50),
-    Aerodromo_PT VARCHAR(10),
-    Hora_EOB VARCHAR(5),
-    Velocidade VARCHAR(20),
-    Nível_de_Voo VARCHAR(20),
-    Rota TEXT,
-    Aerodromo_Destino VARCHAR(10),
-    Duração_Total_do_Voo VARCHAR(10),
-    Aerodromo_Alternativa VARCHAR(10),
-    Observacoes TEXT
-);
-```
-
-### 2. Configuração do Código
-O código está configurado para conectar ao MySQL local:
-- **URL**: `jdbc:mysql://localhost:3306/exemplobd`
-- **Usuário**: `root`
-- **Senha**: `root`
-
-> [!IMPORTANT]
-> Se suas credenciais do MySQL forem diferentes, atualize a linha 271 no arquivo `PlanoDeVooApp.java`.
-
-## 🏃 Como Executar
-
-1. Compile o projeto (certifique-se de que o Driver JDBC está no classpath):
-   ```bash
-   javac -cp ".;lib/mysql-connector-java.jar" src/PlanoDeVooApp.java
-   ```
-2. Execute a aplicação:
-   ```bash
-   java -cp ".;lib/mysql-connector-java.jar;src" PlanoDeVooApp
-   ```
-
-## 🤝 Contribuição
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir uma *Issue* ou enviar um *Pull Request*.
+## 🌟 Principais Características
+- **Arquitetura Híbrida**: Utilize a aplicação `.exe` local ou acesse via navegador de qualquer lugar.
+- **Sincronização em Nuvem**: Ambos os sistemas utilizam o banco de dados **Neon (PostgreSQL)** em tempo real.
+- **Design Premium**: Interface web com Glassmorphism, otimizada para Desktop e Mobile.
+- **Serverless**: Backend da web processado via **Netlify Functions**.
 
 ---
-Desenvolvido por João Pedro.
+
+## 📁 Estrutura do Projeto
+
+```text
+├── Plano de Voo/        # Código fonte da aplicação Desktop (Java Swing)
+├── web_frontend/        # Código fonte da aplicação Web
+│   ├── netlify/         # Funções Serverless (Node.js)
+│   ├── index.html       # Interface principal
+│   ├── styles.css       # Estilização Premium
+│   └── app.js           # Lógica do front-end
+└── README.md            # Esta documentação
+```
+
+---
+
+## ⚙️ Configuração e Instalação
+
+### 1. Banco de Dados (Neon)
+1. Crie uma conta no [Neon.tech](https://neon.tech).
+2. Execute o script `web_frontend/schema.sql` no console SQL do Neon para criar a tabela necessária.
+
+### 2. Configuração Web (Netlify)
+1. Faça o upload da pasta `web_frontend` para o Netlify.
+2. Nas configurações do site, adicione a variável de ambiente:
+   - `DATABASE_URL`: Sua Connection String completa do Neon.
+
+### 3. Configuração Desktop (Java)
+1. Certifique-se de ter o [JDBC Driver do PostgreSQL](https://jdbc.postgresql.org/download/) no seu Classpath.
+2. No arquivo `PlanoDeVooApp.java`, as credenciais do banco devem ser preenchidas conforme sua instância no Neon.
+
+---
+
+## 📱 Responsividade Mobile
+A versão web foi otimizada para dispositivos móveis, apresentando:
+- Empilhamento inteligente de campos.
+- Botões de toque facilitado.
+- Feedback visual via Toasts (notificações).
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+- **Desktop**: Java (Swing), JDBC.
+- **Web**: HTML5, CSS3 (Vanilla), JavaScript (ES6).
+- **Backend**: Node.js, Netlify Functions.
+- **Banco de Dados**: PostgreSQL (Neon Cloud).
+
+---
+*Desenvolvido como um projeto de modernização de sistemas legados.*
