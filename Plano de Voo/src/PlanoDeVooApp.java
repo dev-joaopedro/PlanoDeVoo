@@ -584,7 +584,7 @@ public class PlanoDeVooApp {
     private static void erro(String msg) {
         JOptionPane.showMessageDialog(null, msg, "Erro de Validação", JOptionPane.ERROR_MESSAGE);
     }
-
+    // commit envio
     // ── Envio ────────────────────────────────────────────────────────────────
     private static void enviarPlano() {
         if (!validarFormulario()) return;
